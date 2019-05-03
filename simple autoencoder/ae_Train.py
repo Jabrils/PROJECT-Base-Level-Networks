@@ -27,7 +27,9 @@ decoded = Dense(units=784, activation='sigmoid')(decoded)
 
 # Create the Autoencoder Model
 autoencoder=Model(input_img, decoded)
-autoencoder.load_weights("model.h5")
+
+# If you want to load your model to continue training
+#autoencoder.load_weights("model.h5")
 
 # Can confirm to see if we have the right shape model
 # autoencoder.summary()
