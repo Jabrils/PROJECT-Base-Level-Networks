@@ -2,7 +2,6 @@ from keras.datasets import mnist
 from keras.layers import Input, Dense
 from keras.models import Model
 import numpy as np
-import pandas as pd
 
 (X_train, _), (X_test, _) = mnist.load_data()
 print(f"First shape:\nTraining: {X_train.shape}\nTesting: {X_test.shape}\n")
