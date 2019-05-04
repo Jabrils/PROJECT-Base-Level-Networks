@@ -1,3 +1,7 @@
+'''
+Originally lifted from this article https://medium.com/datadriveninvestor/simple-autoencoders-using-keras-6e67677f5679
+'''
+
 from keras.datasets import mnist
 from keras.layers import Input, Dense
 from keras.models import Model
