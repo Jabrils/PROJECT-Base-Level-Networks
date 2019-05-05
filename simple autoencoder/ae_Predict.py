@@ -1,4 +1,4 @@
-from keras.preprocessing.image import ImageDataGenerator, array_to_img, img_to_array, load_img
+from keras.preprocessing import image
 from keras.datasets import mnist
 from keras.layers import Input, Dense
 from keras.models import Model, load_model
@@ -11,6 +11,20 @@ X_test = X_test.astype('float32')/255
 X_test = X_test.reshape(len(X_test), np.prod(X_test.shape[1:]))
 
 autoencoder = load_model("model.h5")
+
+# Adding a test digit
+img = image.load_img("myTestDigit.png", color_mode="grayscale")
+img = image.img_to_array(img)
+img = img.astype('float32')/255
+img = img.reshape(1,784)
+X_test[0] = img
+
+# Adding a test letter
+img = image.load_img("myTestLetter.png", color_mode="grayscale")
+img = image.img_to_array(img)
+img = img.astype('float32')/255
+img = img.reshape(1,784)
+X_test[1] = img
 
 predicted = autoencoder.predict(X_test)
 
